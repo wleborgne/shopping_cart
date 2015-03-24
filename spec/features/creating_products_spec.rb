@@ -56,8 +56,9 @@ feature "Products management" do
 
     visit "/products"
 
-    click_link 'Destroy', href: "/products/#{product2.id}"
-
+    # click_link 'Destroy', href: "/products/#{product2.id}"
+    click_link "destroy_product_#{product2.id}"
+    
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.description)
     expect(page).to have_content(product.image_url)
